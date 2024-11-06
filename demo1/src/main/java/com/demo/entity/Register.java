@@ -7,7 +7,8 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Register {
-
+	
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,7 +24,7 @@ public class Register {
     public Register() {
         super();
     }
-
+    
     // Parameterized constructor
     public Register(int id, String username, String password, String email, String firstname, String lastname,
                     String address, String phonenumber) {

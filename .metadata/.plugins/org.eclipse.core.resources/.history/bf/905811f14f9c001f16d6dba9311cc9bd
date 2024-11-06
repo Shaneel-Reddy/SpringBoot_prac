@@ -1,0 +1,51 @@
+package com.demo.controller;
+ 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.RestController;
+ 
+import com.demo.entity.Register;
+
+import com.demo.service.RegisterServiceImp;
+ 
+@RestController
+
+public class RegisterController {
+ 
+	@Autowired private RegisterServiceImp service;
+
+	@PostMapping("/save")
+
+	public String saveUser(@RequestBody Register register)
+
+	{
+
+		Register save=service.saveNewUser(register);
+
+		String message=null;
+
+		if(save!=null)
+
+		{
+
+			message="New User Successfully Register.......";
+
+		}
+
+		else
+
+		{
+
+			message="Registration is Failed";
+
+		}
+
+		return message;
+
+	}
+
+}

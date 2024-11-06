@@ -1,0 +1,12 @@
+package com.demo.service;
+
+import com.demo.entity.Register;
+
+public interface RegisterService {
+
+    // Method to save a new user
+    Register saveNewUser(Register register);
+
+    // Method to handle user login
+    Register login(String username, String password);
+}
